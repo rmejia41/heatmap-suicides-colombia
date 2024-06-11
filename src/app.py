@@ -7,7 +7,7 @@ import folium
 from folium.plugins import HeatMap
 
 # Add the specified path
-data_path = r'C:/Users/Biu9/OneDrive - CDC/Python files/Colombia/Data/Suicidios_Colombia_2016_2019_merged.xlsx'
+data_path = 'https://github.com/rmejia41/open_datasets/raw/main/Suicidios_Colombia_2016_2019_merged.xlsx'
 
 # Load the dataset
 df = pd.read_excel(data_path)
@@ -149,4 +149,4 @@ def update_map(selected_departamentos, selected_sexos, selected_dias, selected_e
     return html.Iframe(srcDoc=map_html, width='100%', height='100%')
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=False, port=8060)
